@@ -68,6 +68,7 @@ for(const section of sections){
 // Add class 'active' to section when near top of viewport
 
 window.addEventListener('scroll', function setActive(){
+const listItems = document.querySelectorAll('li');
 if((document.body.getBoundingClientRect().top)>scrollPos){
     if (i==-1){
         i++;
@@ -76,9 +77,22 @@ if(onViewport(activeElements[i])){
     if(!activeElements[i].classList.contains("your-active-class")){
         activeElements[i].classList.add("your-active-class");
     } 
+    for(const item of listItems){
+        if(activeElements[i].querySelector('h2').textContent == item.textContent){
+            item.classList.add("your-active-item"); /*Highlight section name in navigation bar */
+        }
+       
+    }
+    
 }
 else{
     activeElements[i].classList.remove("your-active-class");  
+      for(const item of listItems){ 
+            if(activeElements[i].querySelector('h2').textContent == item.textContent){
+                item.classList.remove("your-active-item");
+             
+            }
+        }
     i--;
 }}
 else{
@@ -88,9 +102,22 @@ else{
     if(inViewport(activeElements[i])){
         if(!activeElements[i].classList.contains("your-active-class")){
             activeElements[i].classList.add("your-active-class");
-        }   }
-    else{
+        } 
+        for(const item of listItems){
+            if(activeElements[i].querySelector('h2').textContent == item.textContent){
+                item.classList.add("your-active-item"); /*Highlight section name in navigation bar */
+               
+            }
+        }
+    }
+    else {
         activeElements[i].classList.remove("your-active-class");
+        for(const item of listItems){
+            if(activeElements[i].querySelector('h2').textContent == item.textContent){
+                item.classList.remove("your-active-item");
+               
+            }
+        }
         i++;
     }
 }
