@@ -68,9 +68,12 @@ section {
     padding-left: 0;
     margin: 0px;
     border: #fff;
-    text-align: center;
+    text-align : center;
     background-color :#609ba6 ; 
-    height: 3em;
+    position: relative;
+    min-width: fit-content;
+    height: fit-content;
+
 }
 
 .navbar__menu li {
@@ -89,6 +92,8 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+    min-width: fit-content;
+    min-height: fit-content;
    
 }
 
@@ -96,6 +101,8 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+    min-width: fit-content;
+    min-height: fit-content;
 }
 
 /* Header Styles */
@@ -217,6 +224,12 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+li.your-active-item{
+   
+        background: rgb(0, 0, 0);
+        background: linear-gradient(center, #000 0%, rgba(0, 0, 0, 0) 100%);
+    
 }
 
 /* Section Active Styles Keyframe Animations */
